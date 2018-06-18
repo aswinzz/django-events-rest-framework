@@ -1,0 +1,60 @@
+Metadata-Version: 1.1
+Name: django-events-rest-framework
+Version: 0.1
+Summary: A package to easily schedule events with full calendar in Django Rest Framework.
+Home-page: https://aswinzz.github.io/
+Author: aswinzz
+Author-email: aswinvb.aswin6@gmail.com
+License: MIT License
+Description-Content-Type: UNKNOWN
+Description: =====
+        Events
+        =====
+        
+        django-events is a package for the process of scheduling events using Django Rest Framework. Events can be scheduled in a daily,monthly and in few other ways which can be easily integrated with full calendar.
+        Use this package with postgres database.
+        Detailed documentation is in the "docs" directory.
+        
+        Quick start
+        -----------
+        
+        1. Add "events" to your INSTALLED_APPS setting like this::
+        
+            INSTALLED_APPS = [
+                ...
+                'events',
+            ]
+        
+        2. Include the polls URLconf in your project urls.py like this::
+        
+            path('events/', include('events.urls')),
+        
+        3. Run `python manage.py migrate` to create the events models.
+        
+        4. Start the development server , http://127.0.0.1:8000/events/event`
+           is the endpoint for creating and viewing the events.
+        
+        5. GET request needs to be of the form `http://127.0.0.1:8000/events/event?start="start date goes here"&end="end date goes here"`.
+        
+        6 POST request (URL:`http://127.0.0.1:8000/events/event`) should contain :
+            * title : Some name for the event
+            * start_date : Starting date of the event
+            * start_time : Starting time of the event
+            * end_time : ending time of the event
+            * end_recurring_date : if the event is reccurring then this date will be used as a limiting end_recurring_date
+            * repeats : 0 -  if the event occurs only once , 1 if the event is reccurring
+            * repeat_frequenct : 0 - if the event occurs only once, 1 if for daily ,2 for weekly ,3 for monthly
+            * dow : days of week in which the event occurs ( only for weekly and monthly )
+            * week_type : only for monthly ( 0:first week of the month ,1:second week of the month ...)
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.11
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content

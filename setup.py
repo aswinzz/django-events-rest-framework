@@ -9,13 +9,13 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-events-rest-framework',
-    version='0.1',
+    version='0.11',
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',  # example license
     description='A package to easily schedule events with full calendar in Django Rest Framework.',
     long_description=README,
-    url='https://aswinzz.github.io/',
+    url='https://github.com/aswinzz/django-events-rest-framework',
     author='aswinzz',
     author_email='aswinvb.aswin6@gmail.com',
     classifiers=[
